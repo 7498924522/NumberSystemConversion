@@ -35,7 +35,7 @@ function SignUp() {
 
   alert(response.data); 
   if (response.status === 200) {
-    navigate("/"); // redirect to login
+    navigate("/lg"); // redirect to login
   }
 
 } catch (error) {
@@ -154,7 +154,7 @@ function SignUp() {
         <p className="mt-4 text-center text-black">
           Already have an account?{" "}
           <button
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/lg")}
             className="text-purple-300 hover:text-purple-200 font-semibold cursor-pointer"
           >
             Sign In

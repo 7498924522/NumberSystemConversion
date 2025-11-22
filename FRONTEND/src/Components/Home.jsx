@@ -16,6 +16,7 @@ import { GiCrownedSkull } from "react-icons/gi";
 import { Calculator, Github, Phone, Binary, Sigma, Mail, BookOpen, Linkedin } from 'lucide-react';
 import { RxCross2 } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { IoPaperPlane } from "react-icons/io5";
 import api from '../api/api';
 function Home() {
     const navigate = useNavigate();
@@ -192,11 +193,11 @@ function Home() {
                 </div>
                 <div className='h-full backdrop-blur-lg  shadow-2xl w-full    p-3   rounded-2xl duration-200 hover:scale-[1.05]'>
                     <div className='flex md:text-2xl font-bold'>HEXADECIMAL NUMBER <FaTurnDown className='mt-2 ml-1' /> </div>
-                    <p className='text-black py-3'>The binary number system is the way <u className='font-semibold'>computers understand</u>  and  <u className='font-semibold'>process information .</u></p>
+                    <p className='text-black py-3'>The hexadecimal system is a way of counting that <u className='font-semibold'> uses 16 distinct symbols.</u> </p>
                     <h2 className='text-xl font-semibold flex '><PiBrainDuotone className='mt-1 mr-1 ' />  Simple Word :- </h2>
-                    <p className='flex '><MdStart className=' pr-2 size-6' /> Binary is the language of computers. (Digits 0 and 1's)</p>
-                    <p className='flex'><MdStart className=' pr-2 size-6' />Each digit in a binary number is called a bit, which stands for binary digit.</p>
-                    <p className='flex'><MdStart className=' pr-2 size-6' />These bits represent ON and OFF states inside a computer's electrical circuits.</p>
+                    <p className='flex '><MdStart className=' pr-2 size-6' /> Symbols Used: It uses the standard numbers 0 through 9 and the first six letters of the alphabet, A through F.</p>
+                    <p className='flex'><MdStart className=' pr-2 size-6' />DIGIT Decimal (0-9) & </p>
+                    <p className='flex'><MdStart className=' pr-2 size-6' /> ALPHABATES 10-A ,11-B , 12-C , 13-D , 14-E , 15-F</p>
 
                 </div>
             </div>
@@ -423,12 +424,13 @@ function Home() {
                                 onChange={(e) => setfeed(e.target.value)}
                                 className="p-2 pr-10  rounded-lg text-black mt-2 w-full md:w-80 border-2 border-white"
                             />
-                            <GiCrownedSkull className="absolute right-3 top-1/2 -translate-y-1/2 text-xl text-black" />
+                            <GiCrownedSkull className="absolute right-5 top-1/2 -translate-y-1/2 text-xl text-black" />
                         </div>
 
-
-                        <button className='px-10 mb-2 shadow-lg rounded-lg md:mr-44 bg-gray-300 hover:bg-gray-500 h-8' onClick={handleSubmit}>SUBMIT</button>
-
+                       
+                        
+                         <button className='px-10 mb-2 flex gap-2 shadow-lg rounded-lg md:mr-44 bg-gray-400 hover:bg-gray-500 h-8' onClick={handleSubmit}><IoPaperPlane className='mt-1'/>SUBMIT</button>
+                       
 
                     </div>
                 </div>

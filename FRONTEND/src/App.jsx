@@ -11,6 +11,7 @@ import OctalConverter from './Components/OctalConverter';
 import HexadecimalConverter from './Components/HexadecimalConverter';
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
+import HomePage from './Components/HomePage';
 
 function App() {
 
@@ -19,7 +20,10 @@ function App() {
     
      <BrowserRouter>
       <Routes>
-        <Route path="/" element={ <Login/>} />          
+
+         <Route path="/" element={ <HomePage/>} />          
+       
+        <Route path="/lg" element={ <Login/>} />          
         <Route path="/signup" element={ <SignUp/>} />          
       
          <Route path="/home" element={ <Home/>} />          
