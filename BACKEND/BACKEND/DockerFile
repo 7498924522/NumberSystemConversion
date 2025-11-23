@@ -1,26 +1,13 @@
-# Stage 1: Build stage
+# Stage 1: Build
 FROM eclipse-temurin:17 AS builder
 WORKDIR /build
-
-# Copy the inner BACKEND folder (actual project)
-COPY BACKEND ./BACKEND
-
-# Go inside actual project folder
-WORKDIR /build/BACKEND
-
-# Give permission to wrapper
+COPY . .
 RUN chmod +x mvnw
-
-# Build Spring Boot JAR
 RUN ./mvnw clean package -DskipTests
 
-# Stage 2: Run stage
+# Stage 2: Run
 FROM eclipse-temurin:17
 WORKDIR /app
-
-# Copy built jar
-COPY --from=builder /build/BACKEND/target/*.jar app.jar
-
+COPY --from=builder /build/target/*.jar app.jar
 EXPOSE 8080
-
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]

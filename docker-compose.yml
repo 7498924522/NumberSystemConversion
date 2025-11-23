@@ -1,26 +1,26 @@
+
+
 services:
   db:
     image: mysql:8
     container_name: mysql-db
     environment:
-      MYSQL_DATABASE: feedback
-      MYSQL_USER: root
-      MYSQL_PASSWORD: Rahul@12345
-      MYSQL_ROOT_PASSWORD: Rahul@12345
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
-      - "3306:3306"
+      - "3307:3306"   # host port changed to 3307 to avoid conflicts
     volumes:
       - db_data:/var/lib/mysql
     restart: always
-
   backend:
-    build: ./BACKEND
+    build: ./BACKEND/BACKEND
     container_name: spring-backend
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/feedback
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: Rahul@12345
-      SPRING_PROFILES_ACTIVE: prod
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
+      SERVER_PORT: 8080  # explicitly set backend port
     depends_on:
       - db
     ports:
@@ -30,6 +30,8 @@ services:
   frontend:
     build: ./FRONTEND
     container_name: react-frontend
+    environment:
+      VITE_BACKEND_URL: ${VITE_BACKEND_URL}
     depends_on:
       - backend
     ports:
