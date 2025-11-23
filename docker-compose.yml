@@ -13,7 +13,7 @@ services:
       - db_data:/var/lib/mysql
     restart: always
   backend:
-    build: ./BACKEND/BACKEND
+    build: ./BACKEND
     container_name: spring-backend
     environment:
       SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
