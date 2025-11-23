@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://number-system-conversion-one.vercel.app/")
 @RestController
 @RequestMapping("/users")
 public class UserController {
