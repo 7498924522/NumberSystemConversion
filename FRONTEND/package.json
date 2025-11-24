@@ -7,10 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "start": "concurrently \"npm run start-react\" \"npm run start-backend\"",
-  "start-react": "react-scripts start",
-  "start-backend": "cd ../BACKEND && mvnw spring-boot:run"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
