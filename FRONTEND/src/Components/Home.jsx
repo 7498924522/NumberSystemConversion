@@ -17,7 +17,7 @@ import { Calculator, Github, Phone, Binary, Sigma, Mail, BookOpen, Linkedin } fr
 import { RxCross2 } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoPaperPlane } from "react-icons/io5";
-import api from '../api/api';
+// import api from '../api/api';
 function Home() {
     const navigate = useNavigate();
     const bottomRef = useRef(null);
@@ -29,36 +29,36 @@ function Home() {
     const [feed, setfeed] = useState("");
 
 
-    const handleSubmit = async () => {
-        try {
-            // Trim whitespace from input
-            const trimmedFeed = feed.trim();
+    // const handleSubmit = async () => {
+    //     try {
+    //         // Trim whitespace from input
+    //         const trimmedFeed = feed.trim();
 
-            // Validation
-            if (!trimmedFeed) {
-                alert("Feedback cannot be empty!");
-                return;
-            }
+    //         // Validation
+    //         if (!trimmedFeed) {
+    //             alert("Feedback cannot be empty!");
+    //             return;
+    //         }
 
-            if (trimmedFeed.length > 255) {
-                alert("Feedback is too long! Max 255 characters allowed.");
-                return;
-            }
+    //         if (trimmedFeed.length > 255) {
+    //             alert("Feedback is too long! Max 255 characters allowed.");
+    //             return;
+    //         }
 
-            // Send data to backend
-            await api.post("http://localhost:8080/feedback", {
-                feed: trimmedFeed
-            });
+    //         // Send data to backend
+    //         await api.post("http://localhost:8080/feedback", {
+    //             feed: trimmedFeed
+    //         });
 
-            alert("Feedback saved!");
+    //         alert("Feedback saved!");
 
-            // Reset input field
-            setfeed("");
-        } catch (error) {
-            console.error("Error saving feedback", error);
-            alert("Failed to save feedback. Please try again.");
-        }
-    };
+    //         // Reset input field
+    //         setfeed("");
+    //     } catch (error) {
+    //         console.error("Error saving feedback", error);
+    //         alert("Failed to save feedback. Please try again.");
+    //     }
+    // };
 
     const Back=()=>
     {
@@ -429,7 +429,7 @@ function Home() {
 
                        
                         
-                         <button className='px-10 mb-2 flex gap-2 shadow-lg rounded-lg md:mr-44 bg-gray-400 hover:bg-gray-500 h-8' onClick={handleSubmit}><IoPaperPlane className='mt-1'/>SUBMIT</button>
+                         <button className='px-10 mb-2 flex gap-2 shadow-lg rounded-lg md:mr-44 bg-gray-400 hover:bg-gray-500 h-8' ><IoPaperPlane className='mt-1'/>SUBMIT</button>
                        
 
                     </div>
