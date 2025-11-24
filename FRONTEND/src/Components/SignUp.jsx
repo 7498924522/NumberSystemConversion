@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Eye, EyeOff, Lock, Mail, User, Check } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import api from "../api/api"; // import axios instance
+// import api from "../api/api"; // import axios instance
 
 function SignUp() {
   const navigate = useNavigate();

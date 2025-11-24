@@ -30,7 +30,7 @@ export default function HomePage() {
             <LogIn className="w-3 h-3 sm:w-4 sm:h-4" />
             Login
           </button>
-          <button onClick={()=>navigate("/signup")} className="px-2 sm:px-3 md:px-5 py-2 md:py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-1 md:gap-2 font-medium text-xs sm:text-sm md:text-base">
+          <button  className="px-2 sm:px-3 md:px-5 py-2 md:py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-1 md:gap-2 font-medium text-xs sm:text-sm md:text-base">
             <UserPlus className="w-3 h-3 sm:w-4 sm:h-4" />
             Sign Up
           </button>

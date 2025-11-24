@@ -1,34 +1,35 @@
 import React, { useState } from "react";
 import { Eye, EyeOff, Lock, Mail ,User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import api from "../api/api";
+
 
 function Login() {
   
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async () => {
-    setIsLoading(true);
-    try {
-      const response = await api.post("/users/login", {username, email, password });
-      alert(response.data);
-      if (response.data === "Login Successful 👍") {
-        navigate("/home"); //redirect to dashboard
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Login failed");
-    } finally {
+ const handleSubmit=()=>
+ {
+        if(username=="RahulRathod" && password=="12345")
+        {
+             alert("Login Successful");
+             navigate("/home")
+        }
+        else if(username != "RahulRathod")
+        {
+            alert("Invalid username")
+        }
+        else{
+          alert("Invalid Password")
+        }
+        
+ }
 
-
-      setIsLoading(false);
-    }
-  };
+ 
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 p-4">
@@ -38,7 +39,7 @@ function Login() {
         </h2>
 
         {/* Email */}
-        <div className="mb-2">
+        {/* <div className="mb-2">
           <label className="block text-black mb-1">Email</label>
           <div className="relative">
             <Mail className="absolute left-3 top-3 text-black" />
@@ -51,7 +52,7 @@ function Login() {
               
             />
            </div>
-        </div>
+        </div> */}
 
              <p className="text-center">or</p>
 
@@ -109,7 +110,7 @@ function Login() {
         <p className="mt-4 text-center text-black">
           Don't have an account?{" "}
           <button
-            onClick={() => navigate("/signup")}
+            
             className="text-purple-300 hover:text-purple-200 font-semibold cursor-pointer"
           >
             Sign Up
